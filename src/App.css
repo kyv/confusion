@@ -1,0 +1,8 @@
+.comments li {
+  margin-bottom: 2em;
+}
+
+.comment-author {
+  float: right;
+  font-size: 85%;
+}
