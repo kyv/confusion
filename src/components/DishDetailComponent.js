@@ -2,19 +2,6 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardText, CardBody,
     CardTitle } from 'reactstrap';
 
-function formatDate(date) {
-    const monthNames = [
-      "Jan", "Feb", "Mar",
-      "April", "May", "June", "July",
-      "Aug", "Sep", "Oct",
-      "Nov", "Dec"
-    ];
-    const d = new Date(date);
-    const m = monthNames[d.getMonth()];
-    const s = `${m} ${d.getDate()}, ${d.getFullYear()}`;
-    return s;
-}
-
 class DishDetail extends Component {
 
     renderDish(dish) {
@@ -46,7 +33,7 @@ class DishDetail extends Component {
                     {comment.comment}
                   </div>
                   <div className="comment-author">
-                    -- {comment.author}, {formatDate(comment.date)}
+                    -- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(comment.date)))}
                   </div>
                 </div>
                 </li>
