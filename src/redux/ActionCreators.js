@@ -85,6 +85,7 @@ export const postFeedback = ({ firstname, lastname, telnum, email, agree, messag
     throw errmess;
   })
   .then(response => response.json())
+  // possibly redundent dispatch since react-redux-form
   .then(response => dispatch(addFeedback(response)))
   .catch(error => {
     console.log('Post feedback', error.message)
